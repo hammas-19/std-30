@@ -608,27 +608,30 @@
     <div class="form-card-sub">Tell us about your business. We'll review it and come back within 24 hours.</div>
 
     <form onsubmit="handleSubmit(event)">
+      <input type="hidden" name="access_key" value="dfcee39c-abb0-47e1-be5c-148413238129">
+      <input type="hidden" name="subject" value="New Application — Studio 30">
+      <input type="checkbox" name="botcheck" style="display:none">
       <div class="form-row">
         <div class="form-group">
           <label>First Name</label>
-          <input type="text" placeholder="James" required>
+          <input type="text" name="first_name" placeholder="James" required>
         </div>
         <div class="form-group">
           <label>Business Name</label>
-          <input type="text" placeholder="Your Business" required>
+          <input type="text" name="business_name" placeholder="Your Business" required>
         </div>
       </div>
       <div class="form-group">
         <label>Email</label>
-        <input type="email" placeholder="james@yourbusiness.com" required>
+        <input type="email" name="email" placeholder="james@yourbusiness.com" required>
       </div>
       <div class="form-group">
         <label>Phone</label>
-        <input type="tel" placeholder="07700 000 000">
+        <input type="tel" name="phone" placeholder="07700 000 000">
       </div>
       <div class="form-group">
         <label>Industry</label>
-        <select required>
+        <select name="industry" required>
           <option value="" disabled selected>Select your industry</option>
           <option>Restaurant / Takeaway</option>
           <option>Dessert Brand / Cafe</option>
@@ -671,7 +674,7 @@
 
       <div class="form-group">
         <label>Biggest social media challenge right now</label>
-        <textarea rows="3" placeholder="e.g. We post inconsistently, our content doesn't look professional, we're getting no engagement..."></textarea>
+        <textarea name="challenge" rows="3" placeholder="e.g. We post inconsistently, our content doesn't look professional, we're getting no engagement..."></textarea>
       </div>
 
       <button type="submit" class="btn-submit">Submit Application</button>
@@ -995,13 +998,46 @@
     el.classList.add('selected');
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('button[type="submit"]');
-    btn.textContent = 'Application Sent';
-    btn.style.background = '#2a5a3a';
-    btn.style.color = '#fff';
-    btn.disabled = true;
+    const form = e.target;
+    const btn  = form.querySelector('button[type="submit"]');
+
+    // Collect qualifier selections
+    const revenue = document.querySelector('#revenueOptions .qualifier-btn.selected');
+    const ads     = document.querySelector('#adsOptions .qualifier-btn.selected');
+    const data    = Object.fromEntries(new FormData(form));
+    if (revenue) data['monthly_revenue'] = revenue.textContent;
+    if (ads)     data['runs_paid_ads']   = ads.textContent;
+
+    btn.textContent = 'Sending...';
+    btn.disabled    = true;
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const json = await res.json();
+      if (json.success) {
+        btn.textContent      = '✓ Application Sent';
+        btn.style.background = '#2a5a3a';
+        btn.style.color      = '#fff';
+        form.reset();
+        document.querySelectorAll('.qualifier-btn').forEach(b => b.classList.remove('selected'));
+      } else {
+        btn.textContent = 'Something went wrong — try again';
+        btn.style.background = '#5a2a2a';
+        btn.style.color      = '#fff';
+        btn.disabled = false;
+      }
+    } catch(err) {
+      btn.textContent = 'Network error — try again';
+      btn.style.background = '#5a2a2a';
+      btn.style.color      = '#fff';
+      btn.disabled = false;
+    }
   }
 
   // Video testimonial modal logic
