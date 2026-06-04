@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio 30 Marketing — Done-For-You Social Media & Content</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --black: #0a0a0a;
+    --off-black: #111111;
+    --dark: #1a1a1a;
+    --dark-2: #222222;
+    --white: #ffffff;
+    --gold: #c9a84c;
+    --gold-light: #e8d49a;
+    --gold-dark: #8a6c28;
+    --border: rgba(255,255,255,0.08);
+    font-size: 16px;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-black);
+    color: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 5vw;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .logo { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); }
+  .logo span { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold); color: var(--black);
+    font-family: 'Syne', sans-serif; font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.6rem 1.25rem; border: none; cursor: pointer; text-decoration: none;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* HERO — two column */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    padding: 8rem 5vw 5rem;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 30% 0%, rgba(201,168,76,0.1) 0%, transparent 60%), var(--off-black);
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='1' cy='1' r='0.8' fill='rgba(255,255,255,0.03)'/%3E%3C/svg%3E") repeat;
+    pointer-events: none;
+  }
+  .hero-left { position: relative; z-index: 1; }
+  .hero-eyebrow {
+    font-family: 'Syne', sans-serif; font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold);
+    margin-bottom: 1.5rem; border: 1px solid rgba(201,168,76,0.3);
+    padding: 0.4rem 1rem; display: inline-block;
+  }
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    font-weight: 800; line-height: 0.95; letter-spacing: -0.03em; margin-bottom: 1.5rem;
+  }
+  .hero h1 em { font-style: normal; color: var(--gold); }
+  .hero-sub {
+    font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.55);
+    max-width: 460px; margin-bottom: 2rem; line-height: 1.75;
+  }
+  .hero-sectors { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 2rem; }
+  .sector-pill {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+    font-size: 0.68rem; padding: 0.3rem 0.7rem; color: rgba(255,255,255,0.4); letter-spacing: 0.06em;
+  }
+
+  /* HERO RIGHT — form card */
+  .hero-form-card {
+    position: relative; z-index: 1;
+    background: var(--dark);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 2.5rem 2rem;
+  }
+  .form-card-title {
+    font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 700;
+    margin-bottom: 0.4rem; letter-spacing: -0.01em;
+  }
+  .form-card-sub {
+    font-size: 0.82rem; color: rgba(255,255,255,0.4); font-weight: 300;
+    margin-bottom: 1.75rem; line-height: 1.5;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.75rem; }
+  .form-group label {
+    font-family: 'Syne', sans-serif; font-size: 0.62rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: rgba(255,255,255,0.35);
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: var(--dark-2); border: 1px solid var(--border); color: var(--white);
+    padding: 0.8rem 0.9rem; font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+    outline: none; transition: border-color 0.2s; width: 100%;
+  }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.2); }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: rgba(201,168,76,0.5); }
+  .form-group select { appearance: none; color: rgba(255,255,255,0.6); cursor: pointer; }
+  .form-group select option { background: #1a1a1a; color: var(--white); }
+
+  /* QUALIFIER */
+  .qualifier-label {
+    font-family: 'Syne', sans-serif; font-size: 0.62rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 0.5rem; display: block;
+  }
+  .qualifier-options {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.75rem;
+  }
+  .qualifier-btn {
+    background: var(--dark-2); border: 1px solid var(--border); color: rgba(255,255,255,0.5);
+    padding: 0.65rem 0.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.8rem;
+    cursor: pointer; text-align: center; transition: all 0.15s; user-select: none;
+  }
+  .qualifier-btn:hover { border-color: rgba(201,168,76,0.3); color: rgba(255,255,255,0.75); }
+  .qualifier-btn.selected { border-color: var(--gold); color: var(--gold); background: rgba(201,168,76,0.07); }
+
+  .btn-submit {
+    width: 100%; background: var(--gold); color: var(--black);
+    font-family: 'Syne', sans-serif; font-size: 0.8rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 1rem; border: none; cursor: pointer;
+    transition: background 0.2s, transform 0.1s; margin-top: 0.5rem;
+  }
+  .btn-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .form-disclaimer {
+    font-size: 0.7rem; color: rgba(255,255,255,0.2); text-align: center; margin-top: 0.75rem; line-height: 1.5;
+  }
+
+  /* STATS */
+  .stats {
+    background: var(--dark); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 3.5rem 5vw;
+  }
+  .stats-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 2rem; max-width: 900px; margin: 0 auto; text-align: center;
+  }
+  .stat-label { font-family: 'Syne', sans-serif; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+  .stat-number { font-family: 'Syne', sans-serif; font-size: 2.6rem; font-weight: 800; line-height: 1; color: var(--white); }
+  .stat-desc { font-size: 0.78rem; color: rgba(255,255,255,0.4); margin-top: 0.4rem; line-height: 1.4; }
+
+  /* SHARED SECTION */
+  section { padding: 6rem 5vw; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label { font-family: 'Syne', sans-serif; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .section-title { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
+  .section-sub { font-size: 1rem; color: rgba(255,255,255,0.5); max-width: 540px; line-height: 1.7; font-weight: 300; }
+
+  /* HOW IT WORKS */
+  .how-it-works { background: var(--off-black); }
+  .steps { margin-top: 4rem; }
+  .step {
+    display: grid; grid-template-columns: 60px 1fr; gap: 2rem;
+    margin-bottom: 3rem; align-items: start;
+    padding-bottom: 3rem; border-bottom: 1px solid var(--border);
+  }
+  .step:last-child { border-bottom: none; margin-bottom: 0; }
+  .step-num { font-family: 'Syne', sans-serif; font-size: 3rem; font-weight: 800; color: rgba(201,168,76,0.2); line-height: 1; }
+  .step-title { font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .step-body { font-size: 0.92rem; color: rgba(255,255,255,0.5); line-height: 1.75; font-weight: 300; max-width: 600px; }
+
+  /* WHAT'S INCLUDED */
+  .included { background: var(--dark); }
+  .included-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px; margin-top: 4rem; border: 1px solid var(--border);
+  }
+  .included-item {
+    padding: 2rem 1.75rem; background: var(--dark-2); transition: background 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .included-item::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent); opacity: 0; transition: opacity 0.2s;
+  }
+  .included-item:hover { background: #1e1e1e; }
+  .included-item:hover::before { opacity: 1; }
+  .included-icon { font-size: 1.4rem; margin-bottom: 0.9rem; }
+  .included-title { font-family: 'Syne', sans-serif; font-size: 0.92rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .included-body { font-size: 0.83rem; color: rgba(255,255,255,0.4); line-height: 1.65; font-weight: 300; }
+
+  /* RESULTS */
+  .results { background: var(--off-black); }
+  .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 4rem; }
+  .result-card { background: var(--dark); border: 1px solid var(--border); padding: 2rem; transition: border-color 0.2s; }
+  .result-card:hover { border-color: rgba(201,168,76,0.3); }
+  .result-industry { font-family: 'Syne', sans-serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .result-metrics { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem; }
+  .result-metric { font-family: 'Syne', sans-serif; font-size: 0.83rem; color: rgba(255,255,255,0.65); }
+  .result-metric::before { content: '→ '; color: var(--gold); }
+  .result-quote { font-size: 0.83rem; color: rgba(255,255,255,0.35); font-style: italic; border-top: 1px solid var(--border); padding-top: 1rem; font-weight: 300; line-height: 1.6; }
+
+  /* TESTIMONIALS */
+  .testimonials { background: var(--dark); }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 4rem; }
+  .testimonial { background: var(--dark-2); border: 1px solid var(--border); padding: 2rem; }
+  .testimonial-stars { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.1em; margin-bottom: 1rem; }
+  .testimonial-body { font-size: 0.88rem; color: rgba(255,255,255,0.6); line-height: 1.7; font-weight: 300; margin-bottom: 1.25rem; }
+  .testimonial-author { font-family: 'Syne', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; }
+  .testimonial-biz { font-size: 0.72rem; color: rgba(255,255,255,0.3); margin-top: 0.2rem; }
+
+  /* ENHANCED TESTIMONIALS — phone mockup cards */
+  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 2rem; margin-top: 2.5rem; justify-items: center; }
+  .testimonial { display: flex; flex-direction: column; align-items: center; gap: 1rem; padding: 0; background: none; border: none; }
+
+  /* Phone shell */
+  .phone-wrap { position: relative; width: 180px; flex-shrink: 0; }
+  /* Side buttons */
+  .phone-wrap::before {
+    content: '';
+    position: absolute; left: -4px; top: 72px;
+    width: 4px; height: 28px;
+    background: #2a2a2a;
+    border-radius: 3px 0 0 3px;
+    box-shadow: 0 36px 0 #2a2a2a, 0 72px 0 #2a2a2a;
+  }
+  .phone-wrap::after {
+    content: '';
+    position: absolute; right: -4px; top: 100px;
+    width: 4px; height: 44px;
+    background: #2a2a2a;
+    border-radius: 0 3px 3px 0;
+  }
+  .phone-frame {
+    position: relative;
+    width: 180px;
+    background: #111;
+    border-radius: 32px;
+    padding: 10px 8px;
+    box-shadow:
+      0 0 0 2px #333,
+      0 0 0 3px #111,
+      0 20px 60px rgba(0,0,0,0.7),
+      inset 0 0 0 1px rgba(255,255,255,0.04);
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .phone-frame:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 0 0 2px #444, 0 0 0 3px #111, 0 32px 72px rgba(0,0,0,0.8), inset 0 0 0 1px rgba(255,255,255,0.06);
+  }
+  /* Notch */
+  .phone-notch {
+    position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+    width: 60px; height: 20px;
+    background: #111;
+    border-radius: 0 0 14px 14px;
+    z-index: 10;
+    display: flex; align-items: center; justify-content: center; gap: 5px;
+  }
+  .phone-notch::before {
+    content: '';
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #1e1e1e;
+    box-shadow: inset 0 0 0 2px #2a2a2a;
+  }
+  .phone-notch::after {
+    content: '';
+    width: 4px; height: 4px; border-radius: 50%;
+    background: #1c3a2a;
+    box-shadow: 0 0 4px rgba(0,200,100,0.6);
+  }
+  /* Screen */
+  .phone-screen {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9/16;
+    background: #000;
+    border-radius: 24px;
+    overflow: hidden;
+  }
+  .phone-screen img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.6);
+    transition: filter 0.25s;
+  }
+  .phone-frame:hover .phone-screen img { filter: brightness(0.45); }
+  .phone-screen img.thumb-loading { opacity: 0; transition: opacity 0.3s; }
+  .phone-screen img.thumb-loaded { opacity: 1; }
+  .thumb-shimmer { position: absolute; inset: 0; background: linear-gradient(110deg, #1a1a1a 30%, #2a2a2a 50%, #1a1a1a 70%); background-size: 200% 100%; animation: shimmer 1.4s infinite linear; z-index: 1; }
+  @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+  .thumb-shimmer.hidden { display: none; }
+  /* Home bar */
+  .phone-home {
+    width: 50px; height: 4px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 4px;
+    margin: 7px auto 2px;
+  }
+  /* Play overlay */
+  .play-btn {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--gold); color: var(--black);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    transition: transform 0.2s, background 0.2s;
+    z-index: 3; opacity: 0.9;
+  }
+  .phone-frame:hover .play-btn { transform: translate(-50%, -50%) scale(1.12); background: var(--gold-light); opacity: 1; }
+  /* Author info */
+  .testimonial-copy { text-align: center; padding: 0; }
+  .testimonial-author { font-family: 'Syne', sans-serif; font-size: 0.82rem; font-weight: 700; }
+  .testimonial-biz { font-size: 0.72rem; color: rgba(255,255,255,0.38); margin-top: 0.15rem; }
+
+  /* Modal */
+  .video-modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.72); z-index: 220; padding: 2rem; }
+  .video-modal.open { display: flex; }
+  .video-modal .modal-inner { width: 100%; max-width: 980px; position: relative; }
+  .video-modal .close-modal { position: absolute; top: -18px; right: -18px; background: var(--dark); color: var(--white); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid var(--border); }
+  .video-modal iframe { width: 100%; height: 56.25vw; max-height: 580px; border: 0; border-radius: 8px; background: #000; }
+  @media (max-width: 640px) { .testimonials-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 1.25rem; } .phone-wrap, .phone-frame { width: 140px; } }
+
+  /* PHONE REEL SHOWCASE */
+  .phone-reel-section {
+    background: var(--black);
+    padding: 7rem 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .phone-reel-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .phone-reel-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 5vw;
+    margin-bottom: 3.5rem;
+  }
+
+  /* Scrolling strip */
+  .reel-stage {
+    position: relative;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  /* Fade edges */
+  .reel-stage::before, .reel-stage::after {
+    content: '';
+    position: absolute; top: 0; bottom: 0; width: 180px; z-index: 5; pointer-events: none;
+  }
+  .reel-stage::before { left: 0; background: linear-gradient(to right, var(--black), transparent); }
+  .reel-stage::after  { right: 0; background: linear-gradient(to left,  var(--black), transparent); }
+
+  .reel-track {
+    display: flex;
+    gap: 24px;
+    will-change: transform;
+    transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Individual reel cards — plain rounded thumbnail, no phone shell */
+  .reel-card {
+    flex-shrink: 0;
+    width: 230px;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: opacity 0.4s, box-shadow 0.4s;
+    opacity: 0.45;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  }
+  .reel-card.active {
+    opacity: 1;
+    box-shadow: 0 0 0 2px rgba(201,168,76,0.7), 0 16px 48px rgba(0,0,0,0.8);
+  }
+  .reel-card-notch { display: none; }
+  .reel-card-screen {
+    width: 100%;
+    aspect-ratio: 9/16;
+    background: #000;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .reel-card-screen img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.75);
+    transition: filter 0.4s;
+  }
+  .reel-card.active .reel-card-screen img { filter: brightness(1); }
+  .reel-card-bar { display: none; }
+
+  /* Big central phone mockup */
+  .reel-phone-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    pointer-events: none;
+  }
+  .reel-phone-shell {
+    position: relative;
+    width: 245px;
+  }
+  .reel-phone-shell::before {
+    content: '';
+    position: absolute; left: -6px; top: 110px;
+    width: 6px; height: 40px;
+    background: #333;
+    border-radius: 4px 0 0 4px;
+    box-shadow: 0 54px 0 #333, 0 108px 0 #333;
+  }
+  .reel-phone-shell::after {
+    content: '';
+    position: absolute; right: -6px; top: 154px;
+    width: 6px; height: 66px;
+    background: #333;
+    border-radius: 0 4px 4px 0;
+  }
+  .reel-phone-body {
+    width: 245px;
+    background: transparent;
+    border-radius: 40px;
+    padding: 12px 10px;
+    box-shadow:
+      0 0 0 2px #3a3a3a,
+      0 0 0 4px rgba(0,0,0,0.6),
+      0 0 0 6px rgba(201,168,76,0.3),
+      0 30px 80px rgba(0,0,0,0.7);
+    position: relative;
+    z-index: 11;
+  }
+  /* Opaque frame border strip (top/bottom bars of the phone body, not the screen area) */
+  .reel-phone-body::before {
+    content: '';
+    position: absolute; inset: 0;
+    border-radius: 40px;
+    border: 12px solid rgba(20,20,20,0.92);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .reel-phone-notch {
+    position: absolute; top: 14px; left: 50%; transform: translateX(-50%);
+    width: 90px; height: 26px;
+    background: #0e0e0e;
+    border-radius: 0 0 16px 16px;
+    z-index: 12;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+  }
+  .reel-phone-notch::before {
+    content: '';
+    width: 10px; height: 10px; border-radius: 50%;
+    background: #1a1a1a;
+    box-shadow: inset 0 0 0 2px #2a2a2a;
+  }
+  .reel-phone-notch::after {
+    content: '';
+    width: 5px; height: 5px; border-radius: 50%;
+    background: #1c3a2a;
+    box-shadow: 0 0 6px rgba(0,200,100,0.7);
+  }
+  .reel-phone-screen {
+    width: 100%;
+    aspect-ratio: 9/16;
+    background: transparent;
+    border-radius: 38px;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.06);
+    z-index: 2;
+  }
+  .reel-phone-home {
+    width: 80px; height: 5px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 4px;
+    margin: 12px auto 4px;
+  }
+  @media (max-width: 768px) {
+    .reel-stage { height: 520px; }
+    .reel-phone-body { width: 240px; }
+    .reel-phone-shell { width: 240px; }
+    .reel-card { width: 220px; }
+  }
+
+  /* FAQ */
+  .faq { background: var(--off-black); }
+  .faq-list { margin-top: 3rem; max-width: 700px; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-q {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 0; cursor: pointer;
+    font-family: 'Syne', sans-serif; font-size: 0.92rem; font-weight: 600;
+    color: var(--white); gap: 1rem; user-select: none;
+  }
+  .faq-q:hover { color: var(--gold-light); }
+  .faq-toggle { font-size: 1.2rem; color: var(--gold); min-width: 20px; text-align: center; transition: transform 0.2s; }
+  .faq-a { display: none; padding-bottom: 1.5rem; font-size: 0.88rem; color: rgba(255,255,255,0.48); line-height: 1.8; font-weight: 300; }
+  .faq-item.open .faq-a { display: block; }
+  .faq-item.open .faq-toggle { transform: rotate(45deg); }
+
+  /* CTA STRIP */
+  .cta-strip { background: var(--gold); padding: 5rem 5vw; text-align: center; }
+  .cta-strip h2 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; color: var(--black); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 1rem; }
+  .cta-strip p { font-size: 1rem; color: rgba(0,0,0,0.5); max-width: 460px; margin: 0 auto 2.5rem; line-height: 1.7; }
+  .btn-dark {
+    background: var(--black); color: var(--white);
+    font-family: 'Syne', sans-serif; font-size: 0.8rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase; padding: 1rem 2.5rem;
+    border: none; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.15s;
+  }
+  .btn-dark:hover { background: var(--dark); transform: translateY(-2px); }
+
+  /* FOOTER */
+  footer {
+    background: var(--black); border-top: 1px solid var(--border);
+    padding: 3rem 5vw; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;
+  }
+  .footer-logo { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+  .footer-logo span { color: var(--gold); }
+  .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.22); text-align: right; line-height: 1.6; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-eyebrow { animation: fadeUp 0.6s ease both; animation-delay: 0.1s; opacity: 0; }
+  .hero h1 { animation: fadeUp 0.7s ease both; animation-delay: 0.25s; opacity: 0; }
+  .hero-sub { animation: fadeUp 0.7s ease both; animation-delay: 0.4s; opacity: 0; }
+  .hero-sectors { animation: fadeUp 0.7s ease both; animation-delay: 0.55s; opacity: 0; }
+  .hero-form-card { animation: fadeUp 0.7s ease both; animation-delay: 0.3s; opacity: 0; }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 7rem; gap: 3rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .step { grid-template-columns: 40px 1fr; gap: 1rem; }
+    footer { flex-direction: column; text-align: center; }
+    .footer-copy { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Studio <span>30</span></div>
+  <a href="#apply" class="nav-cta">Get a Free Audit</a>
+</nav>
+
+<!-- HERO — copy left, form right -->
+<section class="hero" id="apply">
+  <div class="hero-left">
+    <div class="hero-eyebrow">UK Social Media &amp; Content Agency</div>
+    <h1>Your Socials.<br>Done <em>Properly.</em></h1>
+    <p class="hero-sub">We handle everything — strategy, filming, editing, and posting — so your brand gets the attention it deserves without you lifting a finger.</p>
+    <div class="hero-sectors">
+      <span class="sector-pill">Restaurants</span>
+      <span class="sector-pill">Takeaways</span>
+      <span class="sector-pill">Dessert Brands</span>
+      <span class="sector-pill">Dental Clinics</span>
+      <span class="sector-pill">Aesthetic Clinics</span>
+      <span class="sector-pill">Opticians</span>
+      <span class="sector-pill">Gyms</span>
+      <span class="sector-pill">Hospitality</span>
+      <span class="sector-pill">Automotive</span>
+      <span class="sector-pill">Cafes</span>
+      <span class="sector-pill">Food Parks</span>
+      <span class="sector-pill">Laser Clinics</span>
+      <span class="sector-pill">Hair Salons</span>
+      <span class="sector-pill">Barbershops</span>
+      <span class="sector-pill">Solicitors</span>
+      <span class="sector-pill">Accountants</span>
+      <span class="sector-pill">Pharmacies</span>
+      <span class="sector-pill">Property</span>
+      <span class="sector-pill">Coaches</span>
+      <span class="sector-pill">Retail</span>
+      <span class="sector-pill">Local Service Brands</span>
+    </div>
+  </div>
+
+  <div class="hero-form-card">
+    <div class="form-card-title">Let's see if we're a fit.</div>
+    <div class="form-card-sub">Tell us about your business. We'll review it and come back within 24 hours.</div>
+
+    <form onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="James" required>
+        </div>
+        <div class="form-group">
+          <label>Business Name</label>
+          <input type="text" placeholder="Your Business" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="james@yourbusiness.com" required>
+      </div>
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="tel" placeholder="07700 000 000">
+      </div>
+      <div class="form-group">
+        <label>Industry</label>
+        <select required>
+          <option value="" disabled selected>Select your industry</option>
+          <option>Restaurant / Takeaway</option>
+          <option>Dessert Brand / Cafe</option>
+          <option>Dental Clinic</option>
+          <option>Aesthetic / Laser Clinic</option>
+          <option>Optician</option>
+          <option>Gym / Fitness</option>
+          <option>Automotive</option>
+          <option>Hospitality Venue</option>
+          <option>Hair / Beauty / Barber</option>
+          <option>Pharmacy</option>
+          <option>Property / Estate Agency</option>
+          <option>Legal / Accountancy</option>
+          <option>Coaching / Consultancy</option>
+          <option>Retail</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <!-- FINANCIAL QUALIFIER -->
+      <div style="margin-bottom: 0.75rem;">
+        <span class="qualifier-label">What is your business's approximate monthly revenue?</span>
+        <div class="qualifier-options" id="revenueOptions">
+          <div class="qualifier-btn" onclick="selectOption(this, 'revenue')">Under £5k</div>
+          <div class="qualifier-btn" onclick="selectOption(this, 'revenue')">£5k – £15k</div>
+          <div class="qualifier-btn" onclick="selectOption(this, 'revenue')">£15k – £50k</div>
+          <div class="qualifier-btn" onclick="selectOption(this, 'revenue')">£50k+</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 0.75rem;">
+        <span class="qualifier-label">Do you currently run paid social ads?</span>
+        <div class="qualifier-options" id="adsOptions">
+          <div class="qualifier-btn" onclick="selectOption(this, 'ads')">Yes, actively</div>
+          <div class="qualifier-btn" onclick="selectOption(this, 'ads')">Tried before</div>
+          <div class="qualifier-btn" onclick="selectOption(this, 'ads')">No, not yet</div>
+          <div class="qualifier-btn" onclick="selectOption(this, 'ads')">Interested</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Biggest social media challenge right now</label>
+        <textarea rows="3" placeholder="e.g. We post inconsistently, our content doesn't look professional, we're getting no engagement..."></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">Submit Application</button>
+      <p class="form-disclaimer">We review every application personally. We only take on clients we know we can get results for.</p>
+    </form>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-grid">
+    <div>
+      <div class="stat-label">Clients</div>
+      <div class="stat-number">50+</div>
+      <div class="stat-desc">Active clients across the UK</div>
+    </div>
+    <div>
+      <div class="stat-label">Content</div>
+      <div class="stat-number">3K+</div>
+      <div class="stat-desc">Pieces of content produced</div>
+    </div>
+    <div>
+      <div class="stat-label">Industries</div>
+      <div class="stat-number">20+</div>
+      <div class="stat-desc">Unique sectors worked across</div>
+    </div>
+    <div>
+      <div class="stat-label">Delivery</div>
+      <div class="stat-number">A–Z</div>
+      <div class="stat-desc">Fully managed, nothing on your plate</div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works">
+  <div class="section-inner">
+    <div class="section-label">The Process</div>
+    <h2 class="section-title">From strategy to posting.<br>We handle it all.</h2>
+    <p class="section-sub">Four steps from sign-up to full growth — no complicated systems, no chasing us for updates.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-title">We audit your brand</div>
+          <p class="step-body">We look at your existing content, your competitors, and your audience before we do anything. This gives us the foundation to build a strategy that actually makes sense for your business — not a generic template.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-title">We build your content strategy</div>
+          <p class="step-body">A bespoke content direction built around your audience, location, and goals. Informative, cinematic, and built to drive real footfall, enquiries, and brand awareness — not just views.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-title">We film, edit, and post</div>
+          <p class="step-body">Our team comes to you for professional content shoots. We script, film, edit, and post everything. Consistent, high quality, every single week — you don't have to think about a thing.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div>
+          <div class="step-title">We grow your audience and drive results</div>
+          <p class="step-body">We track what's working, adjust, and scale. Combining organic content with paid ads where appropriate to turn your social media into a real business channel.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="included">
+  <div class="section-inner">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Everything handled.<br>Nothing left to you.</h2>
+    <p class="section-sub">One relationship. Full management. You stay focused on running your business.</p>
+    <div class="included-grid">
+      <div class="included-item">
+        <div class="included-icon">🎬</div>
+        <div class="included-title">Short-Form Video Production</div>
+        <p class="included-body">Scripted, filmed, edited, and posted. Cinematic quality built to perform on Instagram and TikTok every week.</p>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">📸</div>
+        <div class="included-title">Monthly On-Site Content Shoot</div>
+        <p class="included-body">We come to your site every month. Professional content production that keeps your feed fresh without you having to organise a thing.</p>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">📱</div>
+        <div class="included-title">Daily Stories</div>
+        <p class="included-body">Keeping your audience engaged, driving footfall, and pushing offers — consistently, every single day.</p>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">📊</div>
+        <div class="included-title">Bespoke Growth Strategy</div>
+        <p class="included-body">No generic plans. A strategy written specifically for your audience, location, and business goals from day one.</p>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">✍️</div>
+        <div class="included-title">Full Scripting and Captions</div>
+        <p class="included-body">Every piece of content is scripted and captioned. You never have to think about what to say or how to say it.</p>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">📈</div>
+        <div class="included-title">Paid Social Management</div>
+        <p class="included-body">Audience targeting, creative testing, and campaign optimisation handled end to end. Built to convert, not just reach.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section id="results" class="results">
+  <div class="section-inner">
+    <div class="section-label">Client Results</div>
+    <h2 class="section-title">Real brands. Real growth.</h2>
+    <p class="section-sub">What happens when strategy meets consistent, high-quality content production.</p>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-industry">Restaurant — Midlands</div>
+        <div class="result-metrics">
+          <div class="result-metric">Grew from 400 to 12,000+ followers in 6 months</div>
+          <div class="result-metric">Reels consistently hitting 50k–200k views</div>
+          <div class="result-metric">Fully booked weekends within 8 weeks</div>
+        </div>
+        <div class="result-quote">"We had no social media presence. Now it's our number one source of new customers."</div>
+      </div>
+      <div class="result-card">
+        <div class="result-industry">Dental Clinic — West Midlands</div>
+        <div class="result-metrics">
+          <div class="result-metric">30+ new patient enquiries in first 3 months</div>
+          <div class="result-metric">Instagram following grew by 8x</div>
+          <div class="result-metric">Ad cost per lead reduced by over 60%</div>
+        </div>
+        <div class="result-quote">"The quality of the content completely changed how patients perceive us before they even walk in."</div>
+      </div>
+      <div class="result-card">
+        <div class="result-industry">Takeaway Brand — Multiple Locations</div>
+        <div class="result-metrics">
+          <div class="result-metric">Content scaled across 3 new location launches</div>
+          <div class="result-metric">Viral reel achieved 1.2M organic views</div>
+          <div class="result-metric">Direct online order uplift of 35%</div>
+        </div>
+        <div class="result-quote">"Studio 30 handles everything. We just focus on serving the food."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video modal -->
+<div id="videoModal" class="video-modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-inner" role="document">
+    <button class="close-modal" aria-label="Close video">✕</button>
+    <iframe id="videoPlayer" src="" allow="autoplay; encrypted-media" allowfullscreen title="Testimonial video"></iframe>
+  </div>
+</div>
+
+<!-- PHONE REEL SHOWCASE -->
+<div class="phone-reel-section">
+  <div class="phone-reel-inner">
+    <div class="section-label">What Clients Say</div>
+    <h2 class="section-title">Trusted across the UK.</h2>
+  </div>
+
+  <div class="reel-stage">
+
+    <!-- Scrolling track (items duplicated for seamless loop) -->
+    <div class="reel-track" id="reelTrack">
+
+      <div class="reel-card" data-fileid="1ChGA3OHOGezDBhWWg99DH7ORGaQ9Q_7w">
+        <div class="reel-card-notch"></div>
+        <div class="reel-card-screen"><img loading="lazy" src="https://drive.google.com/thumbnail?id=1ChGA3OHOGezDBhWWg99DH7ORGaQ9Q_7w&sz=w400" alt=""></div>
+        <div class="reel-card-bar"></div>
+      </div>
+      <div class="reel-card" data-fileid="10Kp-TRZqJcto5cB_gy3wooCBqTJ8foqq">
+        <div class="reel-card-notch"></div>
+        <div class="reel-card-screen"><img loading="lazy" src="https://drive.google.com/thumbnail?id=10Kp-TRZqJcto5cB_gy3wooCBqTJ8foqq&sz=w400" alt=""></div>
+        <div class="reel-card-bar"></div>
+      </div>
+      <div class="reel-card" data-fileid="1j1aNNnM8kWbZaHOivY3sFNx_wM-e-ulo">
+        <div class="reel-card-notch"></div>
+        <div class="reel-card-screen"><img loading="lazy" src="https://drive.google.com/thumbnail?id=1j1aNNnM8kWbZaHOivY3sFNx_wM-e-ulo&sz=w400" alt=""></div>
+        <div class="reel-card-bar"></div>
+      </div>
+      <div class="reel-card" data-fileid="1EdF46wRtRCg3vpKbE1vAn5bHC3ADGJH5">
+        <div class="reel-card-notch"></div>
+        <div class="reel-card-screen"><img loading="lazy" src="https://drive.google.com/thumbnail?id=1EdF46wRtRCg3vpKbE1vAn5bHC3ADGJH5&sz=w400" alt=""></div>
+        <div class="reel-card-bar"></div>
+      </div>
+      <div class="reel-card" data-fileid="1RIef5RVzuR2vrySsmxG_CF7y93mKYAuw">
+        <div class="reel-card-notch"></div>
+        <div class="reel-card-screen"><img loading="lazy" src="https://drive.google.com/thumbnail?id=1RIef5RVzuR2vrySsmxG_CF7y93mKYAuw&sz=w400" alt=""></div>
+        <div class="reel-card-bar"></div>
+      </div>
+      <div class="reel-card" data-fileid="18wpK1lc1MDTifGmTZdPKIwZts66QO3rj">
+        <div class="reel-card-notch"></div>
+        <div class="reel-card-screen"><img loading="lazy" src="https://drive.google.com/thumbnail?id=18wpK1lc1MDTifGmTZdPKIwZts66QO3rj&sz=w400" alt=""></div>
+        <div class="reel-card-bar"></div>
+      </div>
+      <div class="reel-card" data-fileid="1Jqhz-KjxrFyVIvETyxZCLDkbSpwwXO_G">
+        <div class="reel-card-notch"></div>
+        <div class="reel-card-screen"><img loading="lazy" src="https://drive.google.com/thumbnail?id=1Jqhz-KjxrFyVIvETyxZCLDkbSpwwXO_G&sz=w400" alt=""></div>
+        <div class="reel-card-bar"></div>
+      </div>
+      <div class="reel-card" data-fileid="14CNvkRJS7rN66fPdAJlgI2vA4VjROMF4">
+        <div class="reel-card-notch"></div>
+        <div class="reel-card-screen"><img loading="lazy" src="https://drive.google.com/thumbnail?id=14CNvkRJS7rN66fPdAJlgI2vA4VjROMF4&sz=w400" alt=""></div>
+        <div class="reel-card-bar"></div>
+      </div>
+      <div class="reel-card" data-fileid="1B9wZ5U0_CUOB3DMpfIO5kfF-9-PdvKsX">
+        <div class="reel-card-notch"></div>
+        <div class="reel-card-screen"><img loading="lazy" src="https://drive.google.com/thumbnail?id=1B9wZ5U0_CUOB3DMpfIO5kfF-9-PdvKsX&sz=w400" alt=""></div>
+        <div class="reel-card-bar"></div>
+      </div>
+
+    </div><!-- /reel-track -->
+
+    <!-- Big fixed phone in center (transparent screen — cards show through) -->
+    <div class="reel-phone-center">
+      <div class="reel-phone-shell">
+        <div class="reel-phone-body">
+          <div class="reel-phone-notch"></div>
+          <div class="reel-phone-screen"></div>
+          <div class="reel-phone-home"></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /reel-stage -->
+</div>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="section-inner">
+    <div class="section-label">Questions</div>
+    <h2 class="section-title">You've got questions.<br>We've got answers.</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What do you do?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">We manage your social media from A to Z. Strategy, scripting, filming, editing, captioning, and posting — everything. You approve content before it goes live, but the workload sits entirely with us. We're a done-for-you service, not a consultancy that leaves you to figure it out.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Why social media?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">Your customers are already on Instagram, TikTok, and Facebook every day. The businesses showing up consistently with quality content are the ones they walk into, book with, and recommend. Social media done properly isn't just about followers — it's one of the most cost-effective ways to build awareness, trust, and footfall for a local business.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How do I know this will work for me?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">We've worked across 20+ industries and seen consistent results when strategy, quality production, and consistency are all in place. Before we take you on, we'll audit your current position and tell you honestly what the opportunity looks like. We don't take on clients we can't get results for — there's no point in it for either side. If it's not the right fit, we'll tell you.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What makes Studio 30 different from other agencies?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">Most agencies either hand you a strategy and leave you to film it yourself, or they produce generic content that could be for any business anywhere. We specialise in specific industries, we come to your site to shoot properly, and we build content that actually represents your brand — not a copy-paste approach. We also keep our client numbers manageable so every client gets real attention, not a junior account manager.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What types of businesses do you work with?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">We work with restaurants, takeaways, dessert brands, dental and aesthetic clinics, opticians, gyms, automotive businesses, hospitality venues, salons, pharmacies, property brands, and more. If your business depends on local awareness and customer trust, we're built for you.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What's the next step?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">Fill in the form.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <h2>Your competitors are<br>already posting.</h2>
+  <p>Every week without a proper content strategy is a week of customers choosing someone else. Let's fix that.</p>
+  <a href="#apply" class="btn-dark">Apply Now</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Studio <span>30</span> Marketing</div>
+  <div class="footer-copy">
+    &copy; 2026 Studio 30 Marketing Ltd. All rights reserved.<br>
+    <span>UK-Based Social Media &amp; Content Agency</span>
+  </div>
+</footer>
+
+<script>
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  function selectOption(el, group) {
+    const parent = el.parentElement;
+    parent.querySelectorAll('.qualifier-btn').forEach(b => b.classList.remove('selected'));
+    el.classList.add('selected');
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.textContent = 'Application Sent';
+    btn.style.background = '#2a5a3a';
+    btn.style.color = '#fff';
+    btn.disabled = true;
+  }
+
+  // Video testimonial modal logic
+  document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('videoModal');
+    const player = document.getElementById('videoPlayer');
+    const closeBtn = document.querySelector('.close-modal');
+
+    function openVideo(id) {
+      // Use /preview embed URL — works when file is set to "Anyone with the link can view"
+      player.src = `https://drive.google.com/file/d/${id}/preview`;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      // If the iframe signals it cannot be embedded, open in a new tab instead
+      player.onload = function() {
+        try {
+          // Accessing contentDocument throws if blocked by X-Frame-Options
+          const doc = player.contentDocument || player.contentWindow.document;
+          if (!doc || doc.title === '' || doc.body.innerHTML === '') {
+            closeVideo();
+            window.open(`https://drive.google.com/file/d/${id}/view`, '_blank', 'noopener');
+          }
+        } catch(e) {
+          // Cross-origin block — iframe is loading fine (Drive allows preview embeds)
+        }
+      };
+    }
+
+    function closeVideo() {
+      player.src = '';
+      player.onload = null;
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    // Thumbnail shimmer: fade in on load, hide shimmer; on error leave shimmer visible
+    document.querySelectorAll('.phone-screen img.thumb-loading').forEach(img => {
+      const shimmer = img.previousElementSibling;
+      function onLoaded() { img.classList.add('thumb-loaded'); if (shimmer) shimmer.classList.add('hidden'); }
+      if (img.complete && img.naturalWidth > 0) { onLoaded(); }
+      else {
+        img.addEventListener('load', onLoaded);
+        img.addEventListener('error', () => { img.style.display = 'none'; });
+      }
+    });
+
+    // Attach click handlers to triggers
+    document.querySelectorAll('.video-trigger').forEach(el => {
+      el.addEventListener('click', () => {
+        const id = el.dataset.fileid;
+        if (id) openVideo(id);
+      });
+      el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); } });
+    });
+
+    // Close handlers
+    closeBtn.addEventListener('click', closeVideo);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeVideo(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('open')) closeVideo(); });
+
+    // ── REEL STEP-SCROLL ──────────────────────────────────────────────
+    window.addEventListener('load', function() {
+      const track = document.getElementById('reelTrack');
+      if (!track) return;
+      const cards = Array.from(track.querySelectorAll('.reel-card'));
+      const total = cards.length;
+      if (!total) return;
+
+      let current = 0;
+      let timer   = null;
+      const PAUSE = 2000;   // ms to hold at each card
+      const SLIDE = 500;    // ms CSS transition duration
+
+      function getStep() {
+        const r   = cards[0].getBoundingClientRect();
+        const gap = parseInt(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 24;
+        return r.width + gap;
+      }
+
+      function offsetForIndex(i) {
+        const stage = track.parentElement;
+        const sw    = stage.getBoundingClientRect().width;
+        const step  = getStep();
+        const cw    = cards[0].getBoundingClientRect().width;
+        return (sw / 2) - (i * step) - (cw / 2);
+      }
+
+      function setActive(i) {
+        cards.forEach((c, idx) => c.classList.toggle('active', idx === i));
+      }
+
+      function goTo(i) {
+        current = ((i % total) + total) % total;
+        track.style.transform = `translateX(${offsetForIndex(current)}px)`;
+        setActive(current);
+        clearTimeout(timer);
+        timer = setTimeout(() => goTo(current + 1), PAUSE + SLIDE);
+      }
+
+      // Set initial position instantly (no transition), then enable transition
+      track.style.transition = 'none';
+      track.style.transform  = `translateX(${offsetForIndex(0)}px)`;
+      setActive(0);
+      // Force reflow so the instant position applies before transition is re-enabled
+      track.getBoundingClientRect();
+      track.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+      // Start stepping after first pause
+      timer = setTimeout(() => goTo(1), PAUSE);
+
+      // Click → open modal, pause auto-advance
+      cards.forEach(card => {
+        card.addEventListener('click', () => {
+          const id = card.dataset.fileid;
+          if (!id) return;
+          clearTimeout(timer);
+          openVideo(id);
+          const onModalClose = () => {
+            if (!modal.classList.contains('open')) {
+              modal.removeEventListener('transitionend', onModalClose);
+              timer = setTimeout(() => goTo(current + 1), PAUSE);
+            }
+          };
+          modal.addEventListener('transitionend', onModalClose);
+        });
+      });
+
+    });
+    // ─────────────────────────────────────────────────────────────────
+
+  });
+</script>
+</body>
+</html>
