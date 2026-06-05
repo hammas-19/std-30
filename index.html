@@ -1150,6 +1150,16 @@
       // Start stepping after first pause
       timer = setTimeout(() => goTo(1), PAUSE);
 
+      // Watch for modal close and resume stepping
+      const modalEl = document.getElementById('videoModal');
+      const resumeObserver = new MutationObserver(() => {
+        if (!modalEl.classList.contains('open')) {
+          clearTimeout(timer);
+          timer = setTimeout(() => goTo(current + 1), PAUSE);
+        }
+      });
+      resumeObserver.observe(modalEl, { attributes: true, attributeFilter: ['class'] });
+
       // Click → open modal, pause auto-advance
       cards.forEach(card => {
         card.addEventListener('click', () => {
@@ -1157,13 +1167,6 @@
           if (!id) return;
           clearTimeout(timer);
           openVideo(id);
-          const onModalClose = () => {
-            if (!modal.classList.contains('open')) {
-              modal.removeEventListener('transitionend', onModalClose);
-              timer = setTimeout(() => goTo(current + 1), PAUSE);
-            }
-          };
-          modal.addEventListener('transitionend', onModalClose);
         });
       });
 
