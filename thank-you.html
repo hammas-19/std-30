@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thanks — Studio 30</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0a0a0a; --off-black:#111111; --dark:#1a1a1a; --dark-2:#222222; --white:#ffffff;
+    --gold:#c9a84c; --gold-light:#e8d49a; --border:rgba(255,255,255,0.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{height:100%}
+  body{min-height:100vh;font-family:'DM Sans',sans-serif;background:var(--off-black);color:var(--white);-webkit-font-smoothing:antialiased;line-height:1.6}
+  nav{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 5vw;background:rgba(10,10,10,0.92);border-bottom:1px solid var(--border);}
+  .nav-cta{background:var(--gold);color:var(--black);font-family:'Syne',sans-serif;padding:0.6rem 1.25rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;text-decoration:none}
+  .logo img{height:36px}
+  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:8rem 5vw;}
+  .card{background:var(--dark);border:1px solid rgba(201,168,76,0.12);max-width:900px;padding:3.25rem 2.5rem;text-align:center}
+  h1{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin-bottom:0.6rem}
+  p.lead{color:rgba(255,255,255,0.8);font-size:1.05rem;margin-bottom:1.5rem}
+  .muted{color:rgba(255,255,255,0.45)}
+  .btn-link{display:inline-block;margin-top:1.25rem;background:var(--gold);color:var(--black);padding:0.9rem 1.6rem;border-radius:6px;text-decoration:none;font-family:'Syne',sans-serif;font-weight:700;letter-spacing:0.08em;text-transform:uppercase}
+  footer{background:var(--black);border-top:1px solid var(--border);padding:2rem 5vw;display:flex;justify-content:space-between;align-items:center}
+  .footer-copy{color:rgba(255,255,255,0.32);font-size:0.85rem}
+  @media(max-width:860px){nav{padding:1rem 4vw}.card{padding:2rem}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo"><img src="images/Studi30 - White.png" alt="Studio 30"></div>
+  <a class="nav-cta" href="index.html#apply">See if you qualify</a>
+</nav>
+<main class="hero" role="main">
+  <div class="card" role="region" aria-labelledby="thanksTitle">
+    <h1 id="thanksTitle">Thanks — we’ve received your application</h1>
+    <p class="lead">Our team will review your details and be in touch within 24 hours.</p>
+    <p class="muted">Meanwhile — explore our client results and what we include below.</p>
+    <a class="btn-link" href="index.html">Return home</a>
+  </div>
+</main>
+<footer>
+  <div class="footer-logo"><img src="images/Studi30 - White.png" alt="Studio 30" style="height:28px;opacity:0.6"></div>
+  <div class="footer-copy">&copy; 2026 Studio 30 Marketing Ltd. All rights reserved.</div>
+</footer>
+</body>
+</html>
