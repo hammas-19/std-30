@@ -457,14 +457,16 @@
     overflow: hidden;
     position: relative;
   }
-  .reel-card-screen img {
+  .reel-card-screen img,
+  .reel-card-screen video {
     width: 100%; height: 100%;
     object-fit: cover;
     display: block;
     filter: brightness(0.75);
     transition: filter 0.4s;
   }
-  .reel-card.active .reel-card-screen img { filter: brightness(1); }
+  .reel-card.active .reel-card-screen img,
+  .reel-card.active .reel-card-screen video { filter: brightness(1); }
   .reel-card-bar { display: none; }
 
   /* Big central phone mockup */
@@ -657,29 +659,33 @@
     <div class="logo-marquee-wrap">
       <div class="logo-marquee-track" id="logoTrack">
         <!-- Set 1 -->
-        <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1RZpNyP-CK4WPTE5G_7su-YGj-9UzA5T_&sz=w200" alt="Client logo"></div>
-        <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1WcnGbJ0lCGd-AwvWz2D8SN9RujAR8xf4&sz=w200" alt="Client logo"></div>
-        <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1EMLBibLvqHq_RUxGP4EEGiTIFDn99Qdx&sz=w200" alt="Client logo"></div>
-        <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=15Jv3OfHjHst7b0df2lYGTi44KAzTek0E&sz=w200" alt="Client logo"></div>
-        <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1fOFJlhvv-mvQLKsaLukQoXQl_Wzkugqz&sz=w200" alt="Client logo"></div>
-        <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1SeBNdP62ehm5UiUdO7H4z8lc2ek9wy70&sz=w200" alt="Client logo"></div>
-        <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1zvuCllTc7I5NWThQGHbu_ZqBMsjX2Gs3&sz=w200" alt="Client logo"></div>
-        <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1yurgEBOQDG3D4IBplca7DcEDtOfSu035&sz=w200" alt="Client logo"></div>
-        <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1Qx9_GXUnYOaj6RWJl-rkZcVADZbxYYWz&sz=w200" alt="Client logo"></div>
-        <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1wJAC0-qp4hSF4sYE8r2iPkcqzTtxvQBY&sz=w200" alt="Client logo"></div>
-        <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1aPUddcnG1Yn4e9ErdnOZ1a6dPNLMp989&sz=w200" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/1.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/2.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/3.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/4.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/5.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/6.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/7.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/8.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/9.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/10.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/11.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/12.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/13.png" alt="Client logo"></div>
         <!-- Set 2 (duplicate for seamless loop) -->
-        <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1RZpNyP-CK4WPTE5G_7su-YGj-9UzA5T_&sz=w200" alt="Client logo"></div>
-        <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1WcnGbJ0lCGd-AwvWz2D8SN9RujAR8xf4&sz=w200" alt="Client logo"></div>
-        <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1EMLBibLvqHq_RUxGP4EEGiTIFDn99Qdx&sz=w200" alt="Client logo"></div>
-        <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=15Jv3OfHjHst7b0df2lYGTi44KAzTek0E&sz=w200" alt="Client logo"></div>
-        <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1fOFJlhvv-mvQLKsaLukQoXQl_Wzkugqz&sz=w200" alt="Client logo"></div>
-        <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1SeBNdP62ehm5UiUdO7H4z8lc2ek9wy70&sz=w200" alt="Client logo"></div>
-        <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1zvuCllTc7I5NWThQGHbu_ZqBMsjX2Gs3&sz=w200" alt="Client logo"></div>
-        <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1yurgEBOQDG3D4IBplca7DcEDtOfSu035&sz=w200" alt="Client logo"></div>
-        <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1Qx9_GXUnYOaj6RWJl-rkZcVADZbxYYWz&sz=w200" alt="Client logo"></div>
-        <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1wJAC0-qp4hSF4sYE8r2iPkcqzTtxvQBY&sz=w200" alt="Client logo"></div>
-        <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1aPUddcnG1Yn4e9ErdnOZ1a6dPNLMp989&sz=w200" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/1.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/2.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/3.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/4.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/5.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/6.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/7.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/8.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/9.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/10.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/11.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/12.png" alt="Client logo"></div>
+        <div class="logo-item"><img src="images/companies/13.png" alt="Client logo"></div>
       </div>
     </div>
   </div>
@@ -912,7 +918,7 @@
 <div id="videoModal" class="video-modal" role="dialog" aria-modal="true" aria-hidden="true">
   <div class="modal-inner" role="document">
     <button class="close-modal" aria-label="Close video">✕</button>
-    <iframe id="videoPlayer" src="" allow="autoplay; encrypted-media" allowfullscreen title="Testimonial video"></iframe>
+    <video id="videoPlayer" controls playsinline style="width:100%;max-height:80vh;border-radius:8px;background:#000;"></video>
   </div>
 </div>
 
@@ -928,49 +934,49 @@
     <!-- Scrolling track (items duplicated for seamless loop) -->
     <div class="reel-track" id="reelTrack">
 
-      <div class="reel-card" data-fileid="1ChGA3OHOGezDBhWWg99DH7ORGaQ9Q_7w">
+      <div class="reel-card" data-video="images/testimonials/client1.MOV">
         <div class="reel-card-notch"></div>
-        <div class="reel-card-screen"><img loading="lazy" src="https://drive.google.com/thumbnail?id=1ChGA3OHOGezDBhWWg99DH7ORGaQ9Q_7w&sz=w400" alt=""></div>
+        <div class="reel-card-screen"><video src="images/testimonials/client1.MOV" muted playsinline preload="metadata"></video></div>
         <div class="reel-card-bar"></div>
       </div>
-      <div class="reel-card" data-fileid="10Kp-TRZqJcto5cB_gy3wooCBqTJ8foqq">
+      <div class="reel-card" data-video="images/testimonials/client2.mp4">
         <div class="reel-card-notch"></div>
-        <div class="reel-card-screen"><img loading="lazy" src="https://drive.google.com/thumbnail?id=10Kp-TRZqJcto5cB_gy3wooCBqTJ8foqq&sz=w400" alt=""></div>
+        <div class="reel-card-screen"><video src="images/testimonials/client2.mp4" muted playsinline preload="metadata"></video></div>
         <div class="reel-card-bar"></div>
       </div>
-      <div class="reel-card" data-fileid="1j1aNNnM8kWbZaHOivY3sFNx_wM-e-ulo">
+      <div class="reel-card" data-video="images/testimonials/client3.MP4">
         <div class="reel-card-notch"></div>
-        <div class="reel-card-screen"><img loading="lazy" src="https://drive.google.com/thumbnail?id=1j1aNNnM8kWbZaHOivY3sFNx_wM-e-ulo&sz=w400" alt=""></div>
+        <div class="reel-card-screen"><video src="images/testimonials/client3.MP4" muted playsinline preload="metadata"></video></div>
         <div class="reel-card-bar"></div>
       </div>
-      <div class="reel-card" data-fileid="1EdF46wRtRCg3vpKbE1vAn5bHC3ADGJH5">
+      <div class="reel-card" data-video="images/testimonials/client4.MP4">
         <div class="reel-card-notch"></div>
-        <div class="reel-card-screen"><img loading="lazy" src="https://drive.google.com/thumbnail?id=1EdF46wRtRCg3vpKbE1vAn5bHC3ADGJH5&sz=w400" alt=""></div>
+        <div class="reel-card-screen"><video src="images/testimonials/client4.MP4" muted playsinline preload="metadata"></video></div>
         <div class="reel-card-bar"></div>
       </div>
-      <div class="reel-card" data-fileid="1RIef5RVzuR2vrySsmxG_CF7y93mKYAuw">
+      <div class="reel-card" data-video="images/testimonials/client5.mp4">
         <div class="reel-card-notch"></div>
-        <div class="reel-card-screen"><img loading="lazy" src="https://drive.google.com/thumbnail?id=1RIef5RVzuR2vrySsmxG_CF7y93mKYAuw&sz=w400" alt=""></div>
+        <div class="reel-card-screen"><video src="images/testimonials/client5.mp4" muted playsinline preload="metadata"></video></div>
         <div class="reel-card-bar"></div>
       </div>
-      <div class="reel-card" data-fileid="18wpK1lc1MDTifGmTZdPKIwZts66QO3rj">
+      <div class="reel-card" data-video="images/testimonials/client6.mp4">
         <div class="reel-card-notch"></div>
-        <div class="reel-card-screen"><img loading="lazy" src="https://drive.google.com/thumbnail?id=18wpK1lc1MDTifGmTZdPKIwZts66QO3rj&sz=w400" alt=""></div>
+        <div class="reel-card-screen"><video src="images/testimonials/client6.mp4" muted playsinline preload="metadata"></video></div>
         <div class="reel-card-bar"></div>
       </div>
-      <div class="reel-card" data-fileid="1Jqhz-KjxrFyVIvETyxZCLDkbSpwwXO_G">
+      <div class="reel-card" data-video="images/testimonials/client7.mp4">
         <div class="reel-card-notch"></div>
-        <div class="reel-card-screen"><img loading="lazy" src="https://drive.google.com/thumbnail?id=1Jqhz-KjxrFyVIvETyxZCLDkbSpwwXO_G&sz=w400" alt=""></div>
+        <div class="reel-card-screen"><video src="images/testimonials/client7.mp4" muted playsinline preload="metadata"></video></div>
         <div class="reel-card-bar"></div>
       </div>
-      <div class="reel-card" data-fileid="14CNvkRJS7rN66fPdAJlgI2vA4VjROMF4">
+      <div class="reel-card" data-video="images/testimonials/client8.mp4">
         <div class="reel-card-notch"></div>
-        <div class="reel-card-screen"><img loading="lazy" src="https://drive.google.com/thumbnail?id=14CNvkRJS7rN66fPdAJlgI2vA4VjROMF4&sz=w400" alt=""></div>
+        <div class="reel-card-screen"><video src="images/testimonials/client8.mp4" muted playsinline preload="metadata"></video></div>
         <div class="reel-card-bar"></div>
       </div>
-      <div class="reel-card" data-fileid="1B9wZ5U0_CUOB3DMpfIO5kfF-9-PdvKsX">
+      <div class="reel-card" data-video="images/testimonials/client9.mp4">
         <div class="reel-card-notch"></div>
-        <div class="reel-card-screen"><img loading="lazy" src="https://drive.google.com/thumbnail?id=1B9wZ5U0_CUOB3DMpfIO5kfF-9-PdvKsX&sz=w400" alt=""></div>
+        <div class="reel-card-screen"><video src="images/testimonials/client9.mp4" muted playsinline preload="metadata"></video></div>
         <div class="reel-card-bar"></div>
       </div>
 
@@ -1126,31 +1132,17 @@
     const player = document.getElementById('videoPlayer');
     const closeBtn = document.querySelector('.close-modal');
 
-    function openVideo(id) {
-      // Use /preview embed URL — works when file is set to "Anyone with the link can view"
-      player.src = `https://drive.google.com/file/d/${id}/preview`;
+    function openVideo(src) {
+      player.src = src;
+      player.play();
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
-
-      // If the iframe signals it cannot be embedded, open in a new tab instead
-      player.onload = function() {
-        try {
-          // Accessing contentDocument throws if blocked by X-Frame-Options
-          const doc = player.contentDocument || player.contentWindow.document;
-          if (!doc || doc.title === '' || doc.body.innerHTML === '') {
-            closeVideo();
-            window.open(`https://drive.google.com/file/d/${id}/view`, '_blank', 'noopener');
-          }
-        } catch(e) {
-          // Cross-origin block — iframe is loading fine (Drive allows preview embeds)
-        }
-      };
     }
 
     function closeVideo() {
+      player.pause();
       player.src = '';
-      player.onload = null;
       modal.classList.remove('open');
       modal.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
@@ -1263,10 +1255,10 @@
       // Click → open modal, pause auto-advance
       cards.forEach(card => {
         card.addEventListener('click', () => {
-          const id = card.dataset.fileid;
-          if (!id) return;
+          const src = card.dataset.video;
+          if (!src) return;
           clearTimeout(timer);
-          openVideo(id);
+          openVideo(src);
         });
       });
 
