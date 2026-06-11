@@ -622,9 +622,9 @@
 </nav>
 
 <!-- HERO — copy left, form right -->
-<section class="hero" id="apply">
+<section class="hero">
   <div class="hero-left">
-    <h1>Your Socials<br>Done <em>Properly.</em></h1>
+    <h1>Your Socials<br>Done <em>Properly</em></h1>
     <p class="hero-sub">We handle everything strategy, filming, editing, and posting so your brand gets the attention it deserves without you lifting a finger.</p>
     <div class="hero-sectors">
       <span class="sector-pill">Restaurants</span>
@@ -684,7 +684,7 @@
     </div>
   </div>
 
-  <div class="hero-form-card">
+  <div id="apply" class="hero-form-card">
     <div class="form-card-title">Let's see if we're a fit.</div>
     <div class="form-card-sub">Tell us about your business. We'll review it and come back within 24 hours.</div>
 
@@ -1103,7 +1103,7 @@
       const json = await res.json();
       if (json.success) {
         // Redirect to a dedicated thank-you page on success
-        window.location.href = 'thank-you.html';
+        window.location.href = '/thank-you';
         return;
       } else {
         btn.textContent = 'Something went wrong — try again';
