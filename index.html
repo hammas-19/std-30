@@ -1102,7 +1102,8 @@
       });
       const json = await res.json();
       if (json.success) {
-        // Redirect to a dedicated thank-you page on success
+        form.reset();
+        document.querySelectorAll('.qualifier-btn').forEach(b => b.classList.remove('selected'));
         window.location.href = '/thank-you';
         return;
       } else {
