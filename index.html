@@ -775,22 +775,22 @@
   <div class="stats-grid">
     <div>
       <div class="stat-label">Clients</div>
-      <div class="stat-number">50+</div>
+      <div class="stat-number" data-target="50" data-suffix="+">0</div>
       <div class="stat-desc">Active clients across the UK</div>
     </div>
     <div>
       <div class="stat-label">Content</div>
-      <div class="stat-number">3K+</div>
+      <div class="stat-number" data-target="3" data-suffix="K+">0</div>
       <div class="stat-desc">Pieces of content produced</div>
     </div>
     <div>
       <div class="stat-label">Industries</div>
-      <div class="stat-number">20+</div>
+      <div class="stat-number" data-target="20" data-suffix="+">0</div>
       <div class="stat-desc">Unique sectors worked across</div>
     </div>
     <div>
       <div class="stat-label">Delivery</div>
-      <div class="stat-number">A–Z</div>
+      <div class="stat-number" data-static="A–Z">A–Z</div>
       <div class="stat-desc">Fully managed, nothing on your plate</div>
     </div>
   </div>
@@ -1172,6 +1172,37 @@
     closeBtn.addEventListener('click', closeVideo);
     modal.addEventListener('click', (e) => { if (e.target === modal) closeVideo(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('open')) closeVideo(); });
+
+    // ── STATS COUNTER ────────────────────────────────────────────────
+    (function() {
+      const counters = document.querySelectorAll('.stat-number[data-target]');
+      if (!counters.length) return;
+      const duration = 1600;
+      function animateCounter(el) {
+        const target = +el.dataset.target;
+        const suffix = el.dataset.suffix || '';
+        const start = performance.now();
+        function step(now) {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const ease = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(ease * target) + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+          else el.textContent = target + suffix;
+        }
+        requestAnimationFrame(step);
+      }
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      counters.forEach(el => observer.observe(el));
+    })();
+    // ──────────────────────────────────────────────────────────────────
 
     // ── LOGO MARQUEE (RAF loop) ────────────────────────────────────────
     (function() {
